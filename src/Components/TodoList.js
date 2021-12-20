@@ -18,12 +18,24 @@ const TodoList = () => {
     setTodos(newTodoList);
   };
 
+  const updateTodo = (todoId, updatedValue) => {
+    console.log("updated Id :", todoId);
+    console.log("new value", updatedValue);
+
+    if (!updatedValue.text || /^\s*$/.test(updatedValue.text)) {
+      return;
+    }
+    //return if updted id is same then return updated value else old value
+    setTodos((prev) =>
+      prev.map((item) => (item.id === todoId ? updatedValue : item))
+    );
+  };
+
   const deleteTodo = (id) => {
     console.log("deleted id:", id);
     const deletedTodos = [...todos].filter((todo) => todo.id !== id);
 
     //change the list
-
     setTodos(deletedTodos);
   };
 
@@ -31,7 +43,7 @@ const TodoList = () => {
     <div>
       <TodoForm onSubmit={addTodo} />
       {/* send list of todos to todo components */}
-      <Todo todos={todos} deleteTodo={deleteTodo} />
+      <Todo todos={todos} deleteTodo={deleteTodo} updateTodo={updateTodo} />
     </div>
   );
 };
