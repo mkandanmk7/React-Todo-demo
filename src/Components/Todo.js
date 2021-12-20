@@ -1,6 +1,7 @@
 import { Backspace, Edit } from "@mui/icons-material";
 import React, { useState } from "react";
 import TodoForm from "./TodoForm";
+import "./CSS/Todo.css";
 
 const Todo = ({ todos, updateTodo, deleteTodo }) => {
   const [edit, setEdit] = useState({
@@ -24,10 +25,12 @@ const Todo = ({ todos, updateTodo, deleteTodo }) => {
   return (
     <div className="singleTodo">
       {todos.map((todo) => (
-        <div key={todo.id} className="singleTodo">
+        <div key={todo.id} className="singleTodo_container">
           <h1>{todo.text}</h1>
-          <Edit onClick={() => setEdit({ id: todo.id, value: todo.text })} />
-          <Backspace onClick={() => deleteTodo(todo.id)} />
+          <div>
+            <Edit onClick={() => setEdit({ id: todo.id, value: todo.text })} />
+            <Backspace onClick={() => deleteTodo(todo.id)} />{" "}
+          </div>
         </div>
       ))}
     </div>

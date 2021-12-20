@@ -1,0 +1,15 @@
+.todo_form_container {
+  background: Whitesmoke;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+.addtodo {
+  display: flex;
+  align-items: center;
+}
+.addButton {
+  height: 55px;
+}

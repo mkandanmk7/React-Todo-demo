@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
+import "./CSS/TodoList.css";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]); //list of todo;
@@ -40,7 +41,7 @@ const TodoList = () => {
   };
 
   return (
-    <div>
+    <div className="todoList_container">
       <TodoForm onSubmit={addTodo} />
       {/* send list of todos to todo components */}
       <Todo todos={todos} deleteTodo={deleteTodo} updateTodo={updateTodo} />

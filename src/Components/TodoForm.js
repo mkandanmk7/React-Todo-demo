@@ -1,6 +1,6 @@
 import { Button, TextField } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
-
+import "./CSS/TodoForm.css";
 const TodoForm = (props) => {
   const [input, setInput] = useState("Hello"); //initailly empty;
 
@@ -26,7 +26,7 @@ const TodoForm = (props) => {
     e.preventDefault();
 
     props.onSubmit({
-      id: Math.floor(Math.random() * 100),
+      id: Date.now(),
       text: input,
     });
 
