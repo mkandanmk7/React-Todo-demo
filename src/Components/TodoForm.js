@@ -12,6 +12,16 @@ const TodoForm = (props) => {
     inputRef.current.focus();
   });
 
+  // //update with value
+  // const submitUpdate = (value) => {
+  //   updateTodo(edit.id, value);
+  //   //clear input after update
+  //   setEdit({
+  //     id: null,
+  //     value: "",
+  //   });
+  // };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -32,6 +42,8 @@ const TodoForm = (props) => {
             label="Add a todo..."
             variant="outlined"
             value={input}
+            type="text"
+            name="text"
             ref={inputRef}
             onChange={(e) => setInput(e.target.value)}
           />

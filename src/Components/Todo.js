@@ -26,7 +26,7 @@ const Todo = ({ todos, updateTodo, deleteTodo }) => {
       {todos.map((todo) => (
         <div key={todo.id} className="singleTodo">
           <h1>{todo.text}</h1>
-          <Edit onClick={() => updateTodo({ id: todo.id, value: todo.text })} />
+          <Edit onClick={() => setEdit({ id: todo.id, value: todo.text })} />
           <Backspace onClick={() => deleteTodo(todo.id)} />
         </div>
       ))}
