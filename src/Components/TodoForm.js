@@ -2,7 +2,7 @@ import { Button, TextField } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import "./CSS/TodoForm.css";
 const TodoForm = (props) => {
-  const [input, setInput] = useState("Hello"); //initailly empty;
+  const [input, setInput] = useState(""); //initailly empty;
 
   const inputRef = useRef(null);
 
@@ -24,7 +24,7 @@ const TodoForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    //onsubmit () from
     props.onSubmit({
       id: Date.now(),
       text: input,
